@@ -1,37 +1,38 @@
 #include "matrix.h"
 #include <cmath>
 #include<cstring>
+#include<cstdlib>
 #include<iostream>
 
 using namespace std;
 
 int main()
 {
-	//ÊäÈë¾ØÕóm1
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½m1
 	Matrix m1(2, 3);
 	cin >> m1;
 	cout << endl;
 	cout << m1 << endl;
 
-	//ÊäÈë¾ØÕóm2
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½m2
 	Matrix m2(3, 2);
 	cin >> m2;
 	cout << endl;
 	cout << m2 << endl;
 
-	//¾ØÕóm1Óëm2Ïà³Ë
+	//ï¿½ï¿½ï¿½ï¿½m1ï¿½ï¿½m2ï¿½ï¿½ï¿½
 	Matrix m0 = m1 * m2;
 	cout << m0 << endl;
 
-	//¾ØÕóm1ÓÒ³ËÒ»¸ö³£Êý
+	//ï¿½ï¿½ï¿½ï¿½m1ï¿½Ò³ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Matrix m3 = m1 * 2.0;
 	cout << m3 << endl;
 
-	//¾ØÕóm1×ó³ËÒ»¸ö³£Êý
+	//ï¿½ï¿½ï¿½ï¿½m1ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Matrix m4 = 3.0 * m1;
 	cout << m4 << endl;
 
-	//¶Ô¾ØÕóm3½øÐÐÇ³¿½±´Êä³ö (¾ØÕóÔªËØÖ¸ÕëÖ¸ÏòÍ¬Ò»¿éÄÚ´æ¿Õ¼ä)
+	//ï¿½Ô¾ï¿½ï¿½ï¿½m3ï¿½ï¿½ï¿½ï¿½Ç³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½Ö¸ï¿½ï¿½Ö¸ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½Ú´ï¿½Õ¼ï¿½)
 	Matrix m5 = m3;
 	cout << m5 << endl;
 	return 0;

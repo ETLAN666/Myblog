@@ -3,6 +3,7 @@
 #include <cmath>
 #include<cstring>
 #include<iostream>
+#include<cstdlib>
 
 using namespace std;
 
@@ -38,7 +39,7 @@ Matrix::Matrix(const Matrix& m)
 
 }
 
-Matrix::~Matrix(void)//½øĞĞÌØÅĞ£¬±ÜÃâÄÚ´æ±»ÖØ¸´ÊÍ·Å
+Matrix::~Matrix(void)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´æ±»ï¿½Ø¸ï¿½ï¿½Í·ï¿½
 {
 	if(!MatData)
 	{ }
@@ -56,7 +57,7 @@ Matrix::~Matrix(void)//½øĞĞÌØÅĞ£¬±ÜÃâÄÚ´æ±»ÖØ¸´ÊÍ·Å
 
 }
 
-//·µ»ØÊı×éÔªËØ£¨ÒıÓÃ·µ»Ø£©
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½Ø£ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½Ø£ï¿½
 float& Matrix::operator () (int row, int col)
 {
 	if (row >= Rows || col >= Columns)
@@ -78,7 +79,7 @@ float Matrix::operator () (int row, int col) const
 }
 
 
-//ÖØÔØÔËËã·û+
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+
 Matrix operator + (const Matrix& m1, const Matrix& m2)
 {
 
@@ -99,7 +100,7 @@ Matrix operator + (const Matrix& m1, const Matrix& m2)
 }
 
 
-//½øĞĞÇ³¿½±´£¬Á½¸ö¾ØÕóÔªËØÖ¸ÕëÖ¸ÏòÍ¬Ò»¿éÄÚ´æ¿Õ¼ä
+//ï¿½ï¿½ï¿½ï¿½Ç³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½Ö¸ï¿½ï¿½Ö¸ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½Ú´ï¿½Õ¼ï¿½
 Matrix& Matrix::operator = (const Matrix& m)
 {
 
@@ -112,7 +113,7 @@ Matrix& Matrix::operator = (const Matrix& m)
 }
 
 
-//µ÷Õû¾ØÕó´óĞ¡£¬Ô­ÓĞÖµ²»±ä
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½Ô­ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
 void Matrix::SetSize(int row, int col)
 {
 	if (row == Rows && col == Columns)
@@ -150,7 +151,7 @@ void Matrix::SetSize(int row, int col)
 	Columns = col;
 	return;
 }
-//ÖØÔØÔ¤Ëã·û-
+//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½-
 Matrix operator - (const Matrix& m1, const Matrix& m2)
 {
 
@@ -170,7 +171,7 @@ Matrix operator - (const Matrix& m1, const Matrix& m2)
 	return matTmp;
 }
 
-//ÖØÔØÔ¤Ëã·û*,Á½¸ö¾ØÕóÏà³Ë£¬m1µÄÁĞÒªµÈÓÚm2µÄĞĞ
+//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½*,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½m1ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½m2ï¿½ï¿½ï¿½ï¿½
 Matrix operator * (const Matrix& m1, const Matrix& m2)
 {
 
@@ -193,7 +194,7 @@ Matrix operator * (const Matrix& m1, const Matrix& m2)
 	return matTmp;
 }
 
-//ÖØÔØÔ¤Ëã·û*,¾ØÕóÓÒ³ËÒ»¸öÊı
+//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½*,ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
 Matrix operator * (const Matrix& m1, const float& num)
 {
 	Matrix matTmp(m1.Row(), m1.Col());
@@ -208,7 +209,7 @@ Matrix operator * (const Matrix& m1, const float& num)
 	return matTmp;
 }
 
-//ÖØÔØÔËËã·û*,¾ØÕó×ó³ËÒ»¸öÊı
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
 Matrix operator * (const float& num, const Matrix& m1)
 {
 	Matrix matTmp(m1.Row(), m1.Col());
@@ -221,11 +222,11 @@ Matrix operator * (const float& num, const Matrix& m1)
 	}
 	return matTmp;
 }
-//ÖØÔØÔËËã·û>>£¬Îª¾ØÕóÔªËØ¸³Öµ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½>>ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ôªï¿½Ø¸ï¿½Öµ
 istream& operator>>(istream& input, Matrix& m)
 {
 	int i, j;
-	cout << "ÇëÊäÈë¾ØÕó:" << endl;
+	cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:" << endl;
 	for (i = 0; i < m.Row(); i++)
 	{
 		for (j = 0; j < m.Col(); j++)
@@ -233,7 +234,7 @@ istream& operator>>(istream& input, Matrix& m)
 	}
 	return input;
 }
-//ÖØÔØÔËËã·û<<£¬Ö±½Ó´òÓ¡Êä³ö¾ØÕó
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<<ï¿½ï¿½Ö±ï¿½Ó´ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ostream& operator<<(ostream& output, Matrix& m)
 {
 	int i, j;
